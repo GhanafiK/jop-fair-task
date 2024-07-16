@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <h1 class="text-center text-white py-3 title">Customers Transactions</h1>
+    <div class="search">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <input type="search" name="searchByName" id="searchByName" class="form form-control w-100" placeholder="Search By Name">
+          </div>
+          <div class="col-6">
+            <input type="search" name="searchByName" id="searchByTransactionsAmount" class="form form-control w-100"  placeholder="Search By Transactions Amount">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-3 mytable">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Total Transactions</th>
+            <th scope="col">Trabsaction's Details</th>
+          </tr>
+        </thead>
+        <tbody id="customers">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="d-none graph_details py-5 ">
+      <div class="container w-50 bg-white">
+        <div>
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 class="text-primary">Detalis</h2>
+            <h2><span><i class="fa-solid fa-x"></i></span></h2>
+          </div>
+        </div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
