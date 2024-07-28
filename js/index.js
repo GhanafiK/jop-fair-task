@@ -4,23 +4,21 @@ let customersData;
 let customersTransactionsData;
 let tansactionsAmounts=[]
 async function getapi() {
-    const apiCustomers = await fetch("http://localhost:3000/customers");
+    const apiCustomers = await fetch("https://ghanafik.github.io/jop-fair-task/data/db.json");
     const customers = await apiCustomers.json();
-    customersData=customers
-    const transactionApi=await fetch("http://localhost:3000/transactions");
-    const transactions = await transactionApi.json();
-    customersTransactionsData = transactions;
+    customersData=customers.customers
+    customersTransactionsData = customers.transactions;
     let totalTransactions=0
     let content=``
-    for(let i=0;i<customers.length;i++){
+    for(let i=0;i<customersData.length;i++){
         totalTransactions=calculateTotalTransactions(i+1);
-        tansactionsAmounts.push([i+1,totalTransactions,customers[i].name])
+        tansactionsAmounts.push([i+1,totalTransactions,customersData[i].name])
         const mybtn=document.createElement('button')
         mybtn.classList.add('btn')
         content+=`
             <tr>
                 <td>${i+1}</td>
-                <td>${customers[i].name}</td>
+                <td>${customersData[i].name}</td>
                 <td>${totalTransactions}$</td>
                 <td><button class="btn btn-primary" onclick="displayTransactionDetails('${i+1}')">Details</button></td>
             </tr>
